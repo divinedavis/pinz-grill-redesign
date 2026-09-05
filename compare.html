@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pinz Grill — Before &amp; After</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/logo-sm.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.cmp-head{background:var(--brand);color:#fff;padding:40px 0 32px;text-align:center}
+.cmp-head h1{font-size:clamp(34px,5vw,56px)}
+.cmp-head p{max-width:640px;margin:10px auto 22px;opacity:.9}
+.cmp-head .btn{margin:4px}
+.seg{display:inline-flex;border:2px solid #fff;border-radius:999px;overflow:hidden;margin-top:14px}
+.seg button{background:none;border:0;color:#fff;font-family:var(--head);text-transform:uppercase;letter-spacing:.08em;padding:8px 22px;cursor:pointer;font-size:14px}
+.seg button[aria-pressed=true]{background:#fff;color:var(--brand)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:32px 0 48px}
+.col h2{font-size:22px;color:var(--brand);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.col .tag{font-size:11px;letter-spacing:.12em;padding:2px 10px;border-radius:999px;background:var(--cream);color:var(--muted);font-family:var(--body);font-weight:800}
+.col .tag.new{background:var(--accent);color:#fff}
+.frame{border:1px solid var(--line);border-radius:6px;overflow:auto;height:78vh;background:#fafafa}
+.frame img{width:100%;height:auto}
+.mob .frame{width:min(390px,100%);margin:0 auto}
+.wins{padding:0 0 56px}
+.wins h2{font-size:32px;color:var(--brand);text-align:center;margin-bottom:22px}
+.wins ul{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;max-width:960px;margin:0 auto;padding:0;list-style:none}
+.wins li{padding:14px 16px;border:1px solid var(--line);font-size:15px}
+.wins li b{display:block;font-family:var(--head);text-transform:uppercase;letter-spacing:.04em;font-size:18px;color:var(--brand);margin-bottom:2px}
+@media (max-width:900px){.cols,.wins ul{grid-template-columns:1fr}.frame{height:60vh}}
+</style>
+</head>
+<body>
+<section class="cmp-head"><div class="wrap">
+  <h1>Pinz Grill: Before &amp; After</h1>
+  <p>The current site next to the proposed redesign. Scroll inside each panel. The concept follows the layout pattern of national fast-casual brands: one clear order button, the menu above the fold, and everything reachable in one tap on a phone.</p>
+  <a class="btn btn-accent" href="index.html">Open the Concept</a>
+  <a class="btn btn-white" href="https://www.pinzgrill.com" target="_blank" rel="noopener">Open the Current Site</a>
+  <div><div class="seg" role="group" aria-label="Device"><button aria-pressed="true" data-v="desktop">Desktop</button><button aria-pressed="false" data-v="mobile">Phone</button></div></div>
+</div></section>
+<div class="wrap">
+  <div class="cols" id="cols">
+    <div class="col"><h2>Today <span class="tag">pinzgrill.com</span></h2><div class="frame"><img id="before" src="assets/compare/before-desktop.jpg" alt="Current pinzgrill.com homepage"></div></div>
+    <div class="col"><h2>Concept <span class="tag new">Proposed</span></h2><div class="frame"><img id="after" src="assets/compare/after-desktop.jpg" alt="Proposed Pinz Grill homepage"></div></div>
+  </div>
+  <section class="wins"><h2>What changes for customers</h2>
+    <ul>
+      <li><b>One way to order</b>Today the page has three stacked headers, two QR codes and a "Book Your Table" button for a pickup-only restaurant. The concept has one Order Now button, always visible, wired to the existing ChowNow store.</li>
+      <li><b>Menu above the fold</b>Prices currently live in a flyer image and a PDF. The concept puts every item and price in real text, so it shows up in Google and reads on a phone.</li>
+      <li><b>Real food photos, used well</b>Same photos Pinz already owns, cropped consistently in the nine-item grid instead of a wall of thumbnails.</li>
+      <li><b>The 4–6 PM deal sells itself</b>The 10% off promo moves from a yellow ticker to a dedicated bar under the hero with its own order button.</li>
+      <li><b>Catering gets a page that converts</b>Package prices, how it works in three steps, and a quote form. Today it is a page of paragraphs.</li>
+      <li><b>Consistent hours</b>The current site says 11am–8pm in the header and 11am–6pm in the footer. The concept shows one set of hours everywhere.</li>
+      <li><b>Loads fast</b>No page builder, no 40-font stylesheet. Three static pages and one CSS file.</li>
+      <li><b>Built on Pinz's own brand</b>Maroon and flame orange from the existing logo, so nothing needs to be reprinted.</li>
+    </ul>
+  </section>
+</div>
+<div class="concept">Concept redesign prepared for Pinz Grill — not the live site.</div>
+<script>
+document.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){
+  var v=b.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+  document.getElementById('before').src='assets/compare/before-'+v+'.jpg';document.getElementById('after').src='assets/compare/after-'+v+'.jpg';
+  document.getElementById('cols').classList.toggle('mob',v==='mobile');
+})});
+</script>
+</body>
+</html>

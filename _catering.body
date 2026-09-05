@@ -1,0 +1,37 @@
+<main id="main">
+<section class="hero" style="background-image:url(assets/hero-burger.jpg);min-height:420px">
+  <div class="inner"><span class="pill">Columbia, SC &amp; nearby</span><h1>Catering that<br>guests remember</h1><p>Wings, tenders, burgers, pizza and sides for 10 to 200 people. Cooked fresh for your event, never held in containers.</p><a class="btn btn-accent" href="tel:+18393299352">Call (839) 329-9352</a></div>
+</section>
+<div class="wrap">
+<section class="split">
+  <img src="assets/wings-plate.jpg" alt="Wing platter">
+  <div><h2>Simple, fair, on time</h2>
+    <p>Flexible order sizes from a small group meal to 100-wing packages with multiple sauces. You know the price before we arrive, and there are no surprise line items.</p>
+    <p style="margin:0;color:var(--muted)">Block parties · School &amp; community events · Church functions · Birthdays · Graduations · Family reunions · Festivals &amp; outdoor vending</p></div>
+</section>
+<h2 style="font-size:36px;color:var(--brand);text-align:center;margin-bottom:20px">Wing Packages</h2>
+<div class="pack">
+  <div class="pk"><div class="h">30</div><small>wings · 3 flavors</small><div class="p">$39.99</div></div>
+  <div class="pk"><div class="h">50</div><small>wings · 3 flavors</small><div class="p">$60.99</div></div>
+  <div class="pk"><div class="h">75</div><small>wings · 4 flavors</small><div class="p">$100.99</div></div>
+  <div class="pk"><div class="h">100</div><small>wings · 5 flavors</small><div class="p">$125.99</div></div>
+</div>
+<h2 style="font-size:36px;color:var(--brand);text-align:center;margin-bottom:20px">How it works</h2>
+<div class="steps">
+  <div class="step"><div class="num">1</div><h3>Tell us the date</h3><p>Send your event date, guest count and the items you want. We're available Monday through Saturday.</p></div>
+  <div class="step"><div class="num">2</div><h3>We build the order</h3><p>We confirm quantities, sauces and a price before anything is cooked.</p></div>
+  <div class="step"><div class="num">3</div><h3>Hot on arrival</h3><p>Everything is prepared fresh for your pickup or event window.</p></div>
+</div>
+<section id="request" style="padding-bottom:64px;max-width:760px;margin:0 auto">
+  <h2 style="font-size:36px;color:var(--brand);text-align:center">Request a Quote</h2>
+  <form class="cf" action="mailto:info@pinzgrill.com" method="post" enctype="text/plain">
+    <div><label>Name<input name="name" required></label></div>
+    <div><label>Phone<input name="phone" type="tel" required></label></div>
+    <div><label>Event date<input name="date" type="date"></label></div>
+    <div><label>Guests<input name="guests" type="number" min="1"></label></div>
+    <div class="full"><label>What would you like?<textarea name="items" rows="4" placeholder="e.g. 100 wings (hot, lemon pepper, BBQ), 30 tenders, 2 large pizzas"></textarea></label></div>
+    <div class="full" style="text-align:center"><button class="btn btn-accent" type="submit">Send Request</button><p style="font-size:13px;color:var(--muted);margin:12px 0 0">Or call <a href="tel:+18393299352" style="color:var(--brand)">(839) 329-9352</a>.</p></div>
+  </form>
+</section>
+</div>
+</main>
