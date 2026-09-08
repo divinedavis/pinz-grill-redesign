@@ -1,0 +1,96 @@
+name: PinzGrill
+options:
+  bundleIdPrefix: com.divinedavis
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+  developmentLanguage: en
+
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+
+configs:
+  Debug: debug
+  Release: release
+
+targets:
+  PinzGrill:
+    type: application
+    platform: iOS
+    # One source folder: XcodeGen routes .swift to Compile Sources and every
+    # other extension (.xcassets, .json) to Copy Bundle Resources. A separate
+    # `resources:` key is silently ignored by XcodeGen.
+    sources:
+      - path: PinzGrill
+    info:
+      path: PinzGrill/Info.plist
+      properties:
+        CFBundleDisplayName: Pinz Grill
+        CFBundleName: Pinz Grill
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        UILaunchScreen:
+          UIColorName: LaunchMaroon
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiredDeviceCapabilities:
+          - arm64
+        ITSAppUsesNonExemptEncryption: false
+        CFBundleIconName: AppIcon
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.divinedavis.pinzgrill
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: CG89RY4W6R
+        ENABLE_PREVIEWS: YES
+        # Without this the AccentColor asset is dead weight and every .tint
+        # falls back to system blue.
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+
+  PinzGrillTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: PinzGrillTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.divinedavis.pinzgrill.tests
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: PinzGrill
+
+  PinzGrillUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: PinzGrillUITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.divinedavis.pinzgrill.uitests
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: PinzGrill
+
+schemes:
+  PinzGrill:
+    build:
+      targets:
+        PinzGrill: all
+        PinzGrillTests: [test]
+        PinzGrillUITests: [test]
+    test:
+      targets:
+        - PinzGrillTests
+        - PinzGrillUITests
+      gatherCoverageData: false
+    run:
+      config: Debug
+    archive:
+      config: Release

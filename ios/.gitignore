@@ -1,0 +1,5 @@
+build.nosync/
+*.xcodeproj/
+xcuserdata/
+.DS_Store
+scripts/asc-config.env
