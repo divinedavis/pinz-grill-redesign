@@ -32,6 +32,7 @@ struct MenuView: View {
                     if let id = nav.menuCategoryId { proxy.scrollTo(id, anchor: .top); nav.menuCategoryId = nil }
                 }
             }
+            .background(Color.white)
             .navigationTitle("Menu")
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search wings, pizza, combos…")
             .toolbar {
@@ -51,7 +52,7 @@ struct MenuView: View {
                     Button(cat.name) { withAnimation { proxy.scrollTo(cat.id, anchor: .top) } }
                         .font(.footnote.weight(.heavy))
                         .padding(.horizontal, 12).padding(.vertical, 8)
-                        .background(Brand.cream, in: Capsule()).foregroundStyle(Brand.maroon)
+                        .background(.white, in: Capsule()).overlay(Capsule().stroke(Brand.line, lineWidth: 1)).foregroundStyle(Brand.ink)
                         .buttonStyle(.plain)
                 }
             }
@@ -94,13 +95,13 @@ struct ItemDetailView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     if let url = item.imageURL {
-                        AsyncImage(url: url) { $0.resizable().scaledToFill() } placeholder: { Brand.cream }
+                        AsyncImage(url: url) { $0.resizable().scaledToFill() } placeholder: { Color.white }
                             .frame(height: 220).frame(maxWidth: .infinity).clipped()
                     }
                     VStack(alignment: .leading, spacing: 6) {
-                        Text(item.name).font(.title2.weight(.heavy)).foregroundStyle(Brand.maroon)
-                        if let p = item.price { Text(p.money).font(.title3.weight(.semibold)) }
-                        if let d = item.description, !d.isEmpty { Text(d).foregroundStyle(.secondary) }
+                        Text(item.name).font(.title2.weight(.heavy)).foregroundStyle(Brand.ink)
+                        if let p = item.price { Text(p.money).font(.title3.weight(.semibold)).foregroundStyle(Brand.ink) }
+                        if let d = item.description, !d.isEmpty { Text(d).foregroundStyle(Brand.ink.opacity(0.65)) }
                     }
                     .padding(.horizontal, 20)
 
@@ -110,20 +111,20 @@ struct ItemDetailView: View {
                             ForEach(groups, id: \.group.id) { g in
                                 VStack(alignment: .leading, spacing: 6) {
                                     HStack {
-                                        Text(g.group.name).font(.headline)
+                                        Text(g.group.name).font(.headline).foregroundStyle(Brand.ink)
                                         Spacer()
                                         Text(g.group.rule).font(.caption.weight(.bold)).foregroundStyle(g.group.isRequired ? Brand.accent : .secondary)
                                     }
                                     ForEach(g.options) { m in
                                         HStack {
-                                            Text(m.name).font(.subheadline)
+                                            Text(m.name).font(.subheadline).foregroundStyle(Brand.ink)
                                             Spacer()
                                             if let p = m.price, p > 0 { Text("+\(p.money)").font(.subheadline).foregroundStyle(.secondary) }
                                         }
                                         .padding(.vertical, 3)
                                     }
                                 }
-                                .padding(14).background(Brand.cream, in: RoundedRectangle(cornerRadius: 10))
+                                .padding(14).background(.white, in: RoundedRectangle(cornerRadius: 10)).overlay(RoundedRectangle(cornerRadius: 10).stroke(Brand.line, lineWidth: 1))
                             }
                         }
                         .padding(.horizontal, 20)
@@ -138,6 +139,7 @@ struct ItemDetailView: View {
                 }
                 .padding(.bottom, 20)
             }
+            .background(Color.white)
             .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("Done") { dismiss() } } }
         }
         .presentationDragIndicator(.visible)

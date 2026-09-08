@@ -16,6 +16,7 @@ struct OrderView: View {
                 }
                 .padding(16)
             }
+            .background(Color.white)
             .navigationTitle("Order")
             .refreshable { await store.refresh(force: true) }
         }
@@ -75,6 +76,7 @@ struct OrderView: View {
                 .font(.caption).foregroundStyle(.secondary)
         }
         .font(.subheadline)
+        .foregroundStyle(Brand.ink)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 4)
     }
@@ -82,7 +84,7 @@ struct OrderView: View {
     private func detail(_ k: String, _ v: String) -> some View {
         HStack(alignment: .top) {
             Text(k).foregroundStyle(.secondary).frame(width: 118, alignment: .leading)
-            Text(v).fontWeight(.semibold)
+            Text(v).fontWeight(.semibold).foregroundStyle(Brand.ink)
         }
         .font(.subheadline)
     }

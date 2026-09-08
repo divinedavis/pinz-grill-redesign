@@ -5,6 +5,8 @@ enum Brand {
     static let accent = Color("AccentColor")
     static let gold = Color("Gold")
     static let cream = Color("Cream")
+    static let ink = Color.black
+    static let line = Color(red: 0.88, green: 0.88, blue: 0.88)
     static func headline(_ size: CGFloat) -> Font { .system(size: size, weight: .heavy, design: .default) }
 }
 
@@ -12,8 +14,8 @@ enum Brand {
 struct Headline: View {
     let text: String
     var size: CGFloat = 28
-    var color: Color = Brand.maroon
-    init(_ text: String, size: CGFloat = 28, color: Color = Brand.maroon) { self.text = text; self.size = size; self.color = color }
+    var color: Color = Brand.ink
+    init(_ text: String, size: CGFloat = 28, color: Color = Brand.ink) { self.text = text; self.size = size; self.color = color }
     var body: some View {
         Text(text.uppercased())
             .font(Brand.headline(size)).kerning(0.5)
@@ -61,10 +63,10 @@ struct StatusPill: View {
     var body: some View {
         HStack(spacing: 6) {
             Circle().fill(status.isOpen ? Color.green : Color.red).frame(width: 8, height: 8)
-            Text(status.label()).font(.system(size: 13, weight: .bold))
+            Text(status.label()).font(.system(size: 13, weight: .bold)).foregroundStyle(Brand.ink)
         }
         .padding(.horizontal, 12).padding(.vertical, 7)
-        .background(.regularMaterial, in: Capsule())
+        .background(.white, in: Capsule())
         .accessibilityIdentifier("status-pill")
     }
 }
@@ -93,7 +95,8 @@ struct SectionCard<Content: View>: View {
         VStack(alignment: .leading, spacing: 12) { content }
             .padding(18)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Brand.cream, in: RoundedRectangle(cornerRadius: 14))
+            .background(.white, in: RoundedRectangle(cornerRadius: 14))
+            .overlay(RoundedRectangle(cornerRadius: 14).stroke(Brand.line, lineWidth: 1))
     }
 }
 
@@ -119,7 +122,8 @@ struct CategoryTile: View {
     var body: some View {
         VStack(spacing: 10) {
             ZStack {
-                Circle().fill(Brand.cream)
+                Circle().fill(.white)
+                Circle().stroke(Brand.line, lineWidth: 1)
                 if let img = CategoryArt.imageName(for: category.name) {
                     if CategoryArt.isCutout(img) {
                         Image(img).resizable().scaledToFit().padding(12)
@@ -127,13 +131,13 @@ struct CategoryTile: View {
                         Image(img).resizable().scaledToFill().clipShape(Circle())
                     }
                 } else {
-                    Image(systemName: "cup.and.saucer.fill").font(.system(size: 44)).foregroundStyle(Brand.maroon)
+                    Image(systemName: "cup.and.saucer.fill").font(.system(size: 44)).foregroundStyle(Brand.ink)
                 }
             }
             .frame(width: 128, height: 128)
-            Text(category.name).font(.system(size: 17, weight: .heavy)).foregroundStyle(Brand.maroon)
+            Text(category.name).font(.system(size: 17, weight: .heavy)).foregroundStyle(Brand.ink)
                 .multilineTextAlignment(.center).lineLimit(2)
-            Text("\(category.items.count) items").font(.footnote).foregroundStyle(.secondary)
+            Text("\(category.items.count) items").font(.footnote).foregroundStyle(Brand.ink.opacity(0.6))
         }
         .frame(maxWidth: .infinity)
     }
@@ -144,13 +148,13 @@ struct ItemRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {
-                Text(item.name).font(.system(size: 17, weight: .bold)).foregroundStyle(.primary).multilineTextAlignment(.leading)
+                Text(item.name).font(.system(size: 17, weight: .bold)).foregroundStyle(Brand.ink).multilineTextAlignment(.leading)
                 if let d = item.description, !d.isEmpty {
-                    Text(d).font(.subheadline).foregroundStyle(.secondary).lineLimit(2).multilineTextAlignment(.leading)
+                    Text(d).font(.subheadline).foregroundStyle(Brand.ink.opacity(0.65)).lineLimit(2).multilineTextAlignment(.leading)
                 }
             }
             Spacer(minLength: 8)
-            if let p = item.price { Text(p.money).font(.system(size: 16, weight: .semibold)).foregroundStyle(Brand.maroon) }
+            if let p = item.price { Text(p.money).font(.system(size: 16, weight: .semibold)).foregroundStyle(Brand.ink) }
             if let url = item.imageURL {
                 AsyncImage(url: url) { img in img.resizable().scaledToFill() } placeholder: { Color.clear }
                     .frame(width: 64, height: 64).clipShape(RoundedRectangle(cornerRadius: 8))

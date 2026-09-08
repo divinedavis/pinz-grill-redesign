@@ -14,6 +14,7 @@ struct PinzGrillApp: App {
                 .environmentObject(order)
                 .environmentObject(nav)
                 .tint(Color("Brand"))
+                .preferredColorScheme(.light)   // white background, black text, in every system setting
                 .task { await store.refresh() }
                 .onChange(of: scenePhase) { _, phase in
                     if phase == .active { Task { await store.refresh() } }

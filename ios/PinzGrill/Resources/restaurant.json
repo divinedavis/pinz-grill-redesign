@@ -388,15 +388,15 @@
  "tax_rate": 6.0,
  "tax_type": null,
  "fees": {
-  "forced_gratuity": {
-   "charge_type": "amount",
-   "amount": null,
-   "min_order": 0.0
-  },
   "service": {
    "charge_type": null,
    "amount": null,
    "min_order": null
+  },
+  "forced_gratuity": {
+   "charge_type": "amount",
+   "amount": null,
+   "min_order": 0.0
   }
  },
  "misc_fee": {
@@ -476,8 +476,8 @@
      0,
      0,
      0,
-     1,
-     1,
+     0,
+     0,
      1,
      1,
      1,
@@ -513,7 +513,7 @@
     ],
     "pickup_index_ranges": [
      {
-      "from": 62,
+      "from": 64,
       "to": 83
      }
     ],
@@ -580,8 +580,8 @@
      0,
      0,
      0,
-     1,
-     1,
+     0,
+     0,
      1,
      1,
      1,
@@ -617,7 +617,7 @@
     ],
     "delivery_index_ranges": [
      {
-      "from": 62,
+      "from": 64,
       "to": 75
      }
     ],
@@ -4749,7 +4749,7 @@
   "max_lead_time": null,
   "precision": 15,
   "num_days": 14,
-  "current_time_index": 62,
+  "current_time_index": 64,
   "is_dine_in_ahead_available": false
  },
  "large_order": {

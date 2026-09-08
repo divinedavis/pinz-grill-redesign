@@ -16,7 +16,7 @@ struct InfoView: View {
                     if let a = store.restaurant.address {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(a.line1).font(.headline).accessibilityIdentifier("info-address")
-                            Text(a.line2).foregroundStyle(.secondary)
+                            Text(a.line2).foregroundStyle(Brand.ink.opacity(0.65))
                         }
                     }
                     Link(destination: Business.directions) { Label("Directions", systemImage: "location.fill") }
@@ -43,6 +43,10 @@ struct InfoView: View {
                     LabeledContent("Version", value: version)
                 }
             }
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            .background(Color.white)
+            .foregroundStyle(Brand.ink)
             .navigationTitle("Pinz Grill")
         }
     }

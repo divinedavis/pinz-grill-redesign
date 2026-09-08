@@ -20,7 +20,7 @@ struct HomeView: View {
                     findUs.padding(.horizontal, 16).padding(.vertical, 28)
                 }
             }
-            .background(Color(.systemBackground))
+            .background(Color.white)
             .toolbar(.hidden, for: .navigationBar)
             .refreshable { await store.refresh(force: true) }
             .sheet(item: $selected) { ItemDetailView(item: $0) }
@@ -61,7 +61,7 @@ struct HomeView: View {
             }
             ForEach(r.discounts) { d in
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(d.short_description ?? "Discount").font(.headline)
+                    Text(d.short_description ?? "Discount").font(.headline).foregroundStyle(Brand.ink)
                     Text([d.long_description, d.type == "automatic" ? "Applied automatically at checkout." : nil].compactMap { $0 }.joined(separator: " "))
                         .font(.subheadline).foregroundStyle(.secondary)
                 }
@@ -69,7 +69,7 @@ struct HomeView: View {
             if r.rewards?.enabled == true, let m = r.rewards?.messages {
                 Divider()
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(m.program_description ?? "Rewards").font(.headline)
+                    Text(m.program_description ?? "Rewards").font(.headline).foregroundStyle(Brand.ink)
                     if let t = m.learn_more_title { Text(t).font(.subheadline).foregroundStyle(.secondary) }
                     if let d = m.learn_more_description { Text(d).font(.subheadline).foregroundStyle(.secondary) }
                 }
@@ -124,25 +124,25 @@ struct HomeView: View {
     private var findUs: some View {
         let r = store.restaurant
         return VStack(alignment: .leading, spacing: 14) {
-            Headline("Find us", size: 26, color: .white)
+            Headline("Find us", size: 26)
             if let a = r.address {
-                Text("\(a.line1)\n\(a.line2)").font(.body.weight(.semibold)).foregroundStyle(.white)
+                Text("\(a.line1)\n\(a.line2)").font(.body.weight(.semibold)).foregroundStyle(Brand.ink)
             }
             HStack(alignment: .top, spacing: 24) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("HOURS").font(.caption.weight(.heavy)).foregroundStyle(Brand.gold)
-                    Text(HoursSummary.compact(r.pickup?.hours ?? [])).font(.subheadline).foregroundStyle(.white)
+                    Text("HOURS").font(.caption.weight(.heavy)).foregroundStyle(Brand.ink.opacity(0.6))
+                    Text(HoursSummary.compact(r.pickup?.hours ?? [])).font(.subheadline).foregroundStyle(Brand.ink)
                 }
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("CALL").font(.caption.weight(.heavy)).foregroundStyle(Brand.gold)
-                    Link(Business.phoneDisplay, destination: Business.phoneURL).font(.subheadline).foregroundStyle(.white)
+                    Text("CALL").font(.caption.weight(.heavy)).foregroundStyle(Brand.ink.opacity(0.6))
+                    Link(Business.phoneDisplay, destination: Business.phoneURL).font(.subheadline).foregroundStyle(Brand.ink)
                 }
             }
             HStack(spacing: 12) {
                 Link(destination: Business.directions) {
                     Label("Directions", systemImage: "location.fill").font(.subheadline.weight(.heavy))
                         .frame(maxWidth: .infinity).padding(.vertical, 12)
-                        .background(.white, in: RoundedRectangle(cornerRadius: 6)).foregroundStyle(Brand.maroon)
+                        .background(Brand.maroon, in: RoundedRectangle(cornerRadius: 6)).foregroundStyle(.white)
                 }
                 Link(destination: Business.phoneURL) {
                     Label("Call", systemImage: "phone.fill").font(.subheadline.weight(.heavy))
@@ -152,7 +152,8 @@ struct HomeView: View {
             }
         }
         .padding(20)
-        .background(Brand.maroon, in: RoundedRectangle(cornerRadius: 14))
+        .background(.white, in: RoundedRectangle(cornerRadius: 14))
+        .overlay(RoundedRectangle(cornerRadius: 14).stroke(Brand.line, lineWidth: 1))
     }
 }
 
@@ -161,14 +162,14 @@ struct FavoriteCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             ZStack {
-                RoundedRectangle(cornerRadius: 12).fill(Brand.cream)
+                RoundedRectangle(cornerRadius: 12).fill(.white)
                 if let url = item.imageURL {
                     AsyncImage(url: url) { $0.resizable().scaledToFill() } placeholder: { fallback }
                 } else { fallback }
             }
             .frame(width: 200, height: 140).clipShape(RoundedRectangle(cornerRadius: 12))
-            Text(item.name).font(.headline).foregroundStyle(.primary).lineLimit(2).multilineTextAlignment(.leading)
-            if let p = item.price { Text(p.money).font(.subheadline.weight(.bold)).foregroundStyle(Brand.maroon) }
+            Text(item.name).font(.headline).foregroundStyle(Brand.ink).lineLimit(2).multilineTextAlignment(.leading)
+            if let p = item.price { Text(p.money).font(.subheadline.weight(.bold)).foregroundStyle(Brand.ink) }
         }
         .frame(width: 200, alignment: .leading)
     }
