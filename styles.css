@@ -209,3 +209,8 @@ form.cf .full{grid-column:1/-1}
   .hero .inner{padding:56px 20px}
   .promo .h{font-size:17px;text-align:center}
 }
+/* App privacy + support pages */
+.legal-page h1{font-size:clamp(34px,5vw,52px);color:var(--brand)}
+.legal-page h2{font-size:22px;color:var(--brand);margin:30px 0 8px}
+.legal-page p{margin:0 0 14px;line-height:1.6}
+.legal-page a{color:var(--accent)}

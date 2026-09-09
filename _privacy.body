@@ -1,0 +1,30 @@
+<main id="main" class="legal-page">
+<section class="wrap" style="max-width:760px;padding:48px 20px 64px">
+  <h1 style="margin-bottom:6px">Privacy Policy</h1>
+  <p style="color:var(--muted);margin:0 0 28px">Pinz Grill iOS app · Last updated September 9, 2026</p>
+
+  <p>The Pinz Grill app for iPhone shows the restaurant's menu, hours, deals and contact details, and hands you off to the restaurant's online ordering checkout when you want to place an order. This page explains what the app does and does not do with your information.</p>
+
+  <h2>The app collects no personal data</h2>
+  <p>The app has no accounts, no sign-in, no analytics, no advertising and no tracking. It does not ask for your location, contacts, photos or notifications. Nothing you do in the app is recorded or sent to the developer.</p>
+
+  <h2>Menu and hours are fetched from ChowNow</h2>
+  <p>When the app opens it downloads the current menu, prices, hours, delivery fee and deals from <strong>ChowNow</strong>, the online-ordering service Pinz Grill already uses on pinzgrill.com. That request carries no identifying information other than what any internet request carries (your device's IP address), and the app keeps a copy of the last menu on your phone so it works offline. Menu item photos load from ChowNow's servers the same way.</p>
+
+  <h2>Ordering happens on ChowNow, not in the app</h2>
+  <p>Tapping <em>Pickup</em> or <em>Delivery</em> opens Pinz Grill's ChowNow checkout in a secure Safari window inside the app. Everything you enter there, including your name, phone number, delivery address, payment card and order history, is collected and processed by ChowNow under <a href="https://get.chownow.com/legal/privacy-policy/" target="_blank" rel="noopener">ChowNow's privacy policy</a>, and by the restaurant to prepare your order. The app never sees it. Apple Pay, if you use it, is handled by Apple.</p>
+
+  <h2>Links to other apps</h2>
+  <p><em>Directions</em> opens Apple Maps or Google Maps, <em>Call</em> opens the Phone app, and the Facebook and TikTok links open those services. Each is governed by its own privacy policy once you leave the app.</p>
+
+  <h2>Children</h2>
+  <p>The app is not directed at children under 13 and collects no information from anyone.</p>
+
+  <h2>Changes</h2>
+  <p>If a future version of the app starts collecting any data, this page and the App Store privacy label will be updated before that version ships.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy or the app: <a href="mailto:divinejdavis@gmail.com">divinejdavis@gmail.com</a> (app developer). Questions about an order or about the restaurant: <a href="mailto:info@pinzgrill.com">info@pinzgrill.com</a> or <a href="tel:+18393299352">(839) 329-9352</a>.</p>
+  <p><a href="support.html">App support</a></p>
+</section>
+</main>
