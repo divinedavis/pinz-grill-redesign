@@ -25,7 +25,18 @@ scripts/smoke_test.sh          # build + install + cold launch in a simulator
 scripts/run_tests.sh           # unit + UI tests
 scripts/run_tests.sh -only-testing:PinzGrillTests
 python3 scripts/refresh_snapshot.py               # refresh the bundled fallback
-~/.venvs/penciled/bin/python3 scripts/make_icon.py # regenerate the app icon
+~/.venvs/spendcap/bin/python scripts/make_icon.py # regenerate the app icon (flame grill + Oswald wordmark)
+scripts/ship.sh                                    # tests, smoke, bump, archive, TestFlight
 ```
 
-Team `CG89RY4W6R`, bundle id `com.divinedavis.pinzgrill`. Not yet registered in App Store Connect.
+Team `CG89RY4W6R`, bundle id `com.divinedavis.pinzgrill`, App Store Connect app `6809923608`.
+
+## App Store listing (all in `scripts/`, run with `~/.venvs/spendcap/bin/python`)
+
+1. `capture_screenshots.sh` on an iPhone 17 Pro Max, then `asc_make_screenshots.py` → `marketing/asc-screenshots/`.
+2. `asc_metadata.py [--build N]` writes the whole listing (copy, category, price, availability, screenshots, review notes) and attaches the build. `--show` prints the live state.
+3. `asc_push_privacy_iris.py` declares "Data Not Collected"; needs `fastlane spaceauth -u <apple id>` first (2FA, so a person runs it; 401 = expired cookie).
+4. `asc_submit_for_review.py --check`, then without `--check` to submit.
+5. The version is submitted with a **manual** release. After approval, `asc_release.py` puts it on the store.
+
+The privacy policy and support pages live at `../privacy.html` and `../support.html` (deployed by `../deploy.sh`).
