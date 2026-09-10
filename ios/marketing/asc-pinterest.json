@@ -1,0 +1,15 @@
+{
+  "name": "Pinz Grill",
+  "icon": "/Users/divinedavis/projects/pinz-grill-redesign/ios/PinzGrill/Assets.xcassets/AppIcon.appiconset/icon.png",
+  "brand": "#7A1F2B",
+  "raw_dir": "/Users/divinedavis/projects/pinz-grill-redesign/ios/marketing/raw",
+  "out_dir": "/Users/divinedavis/projects/pinz-grill-redesign/ios/marketing/asc-screenshots-pinterest",
+  "masonry": ["01-home.png", "02-home-categories.png", "04-item.png", "03-menu.png"],
+  "panels": [
+    ["03-menu.png", "The whole menu, live"],
+    ["04-item.png", "Sauce it your way"],
+    ["05-order.png", "Pickup or delivery"],
+    ["06-info.png", "Hours and directions"]
+  ],
+  "stickers": ["🍗", "🍔", "🔥", "🌶️"]
+}
