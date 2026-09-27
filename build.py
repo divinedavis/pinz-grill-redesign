@@ -12,8 +12,8 @@ pages = {
    'Catering in Columbia, SC: wing packages from 30 to 100, tenders, burgers, pizza and sides for events of any size.', '', 'aria-current="page"'),
  # The two pages the iPhone app's App Store listing points at. No concept banner
  # on these: a privacy policy that calls itself a concept reads as fake.
- 'privacy.html': ('_privacy.body', 'Privacy Policy | Pinz Grill app',
-   'What the Pinz Grill iPhone app does and does not do with your information.', '', ''),
+ 'privacy.html': ('_privacy.body', 'Privacy Policy | Pinz Grill',
+   'What the Pinz Grill iPhone app and website do and do not do with your information.', '', ''),
  'support.html': ('_support.body', 'App Support | Pinz Grill',
    'Help with ordering, delivery, catering and the Pinz Grill iPhone app.', '', ''),
 }

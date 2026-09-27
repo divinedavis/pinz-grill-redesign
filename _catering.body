@@ -30,7 +30,7 @@
     <div><label>Event date<input name="date" type="date"></label></div>
     <div><label>Guests<input name="guests" type="number" min="1"></label></div>
     <div class="full"><label>What would you like?<textarea name="items" rows="4" placeholder="e.g. 100 wings (hot, lemon pepper, BBQ), 30 tenders, 2 large pizzas"></textarea></label></div>
-    <div class="full" style="text-align:center"><button class="btn btn-accent" type="submit">Send Request</button><p style="font-size:13px;color:var(--muted);margin:12px 0 0">Or call <a href="tel:+18393299352" style="color:var(--brand)">(839) 329-9352</a>.</p></div>
+    <div class="full" style="text-align:center"><button class="btn btn-accent" type="submit">Send Request</button><p style="font-size:13px;color:var(--muted);margin:12px 0 0">Or call <a href="tel:+18393299352" style="color:var(--brand)">(839) 329-9352</a>.</p><p style="font-size:13px;color:var(--muted);margin:8px 0 0">Opens your email app with this request addressed to info@pinzgrill.com; nothing is sent until you press send. <a href="privacy.html#website" style="color:var(--brand)">Privacy policy</a></p></div>
   </form>
 </section>
 </div>

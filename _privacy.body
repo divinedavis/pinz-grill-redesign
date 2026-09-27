@@ -1,9 +1,9 @@
 <main id="main" class="legal-page">
 <section class="wrap" style="max-width:760px;padding:48px 20px 64px">
   <h1 style="margin-bottom:6px">Privacy Policy</h1>
-  <p style="color:var(--muted);margin:0 0 28px">Pinz Grill iOS app · Last updated September 9, 2026</p>
+  <p style="color:var(--muted);margin:0 0 28px">Pinz Grill iOS app and website · Last updated: September 27, 2026</p>
 
-  <p>The Pinz Grill app for iPhone shows the restaurant's menu, hours, deals and contact details, and hands you off to the restaurant's online ordering checkout when you want to place an order. This page explains what the app does and does not do with your information.</p>
+  <p>The Pinz Grill app for iPhone shows the restaurant's menu, hours, deals and contact details, and hands you off to the restaurant's online ordering checkout when you want to place an order. This page explains what the app does and does not do with your information. The <a href="#website">website section</a> below covers this website (divinedavis.com/pinz-grill/), including the catering request form and the map.</p>
 
   <h2>The app collects no personal data</h2>
   <p>The app has no accounts, no sign-in, no analytics, no advertising and no tracking. It does not ask for your location, contacts, photos or notifications. Nothing you do in the app is recorded or sent to the developer.</p>
@@ -17,14 +17,27 @@
   <h2>Links to other apps</h2>
   <p><em>Directions</em> opens Apple Maps or Google Maps, <em>Call</em> opens the Phone app, and the Facebook and TikTok links open those services. Each is governed by its own privacy policy once you leave the app.</p>
 
+  <h2 id="website">This website</h2>
+  <p>The website has no accounts, no cookies of its own, no analytics, no advertising and no tracking pixels.</p>
+  <ul>
+    <li><strong>Catering request form.</strong> The <em>Request a Quote</em> form on the catering page does not send anything to a server. Pressing <em>Send Request</em> opens your own email app with a message to <a href="mailto:info@pinzgrill.com">info@pinzgrill.com</a> containing what you typed (name, phone, event date, guest count and your order). Nothing is sent unless you press send in your email app. The email then goes to the restaurant, which uses it to quote and prepare your catering order and keeps it in its inbox for as long as it needs it for that order.</li>
+    <li><strong>Embedded Google Map.</strong> The home page shows an embedded map from <strong>Google Maps</strong>. When it loads, Google receives your IP address and browser details and may set its own cookies, under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>. The <em>Directions</em> and address links open Google Maps.</li>
+    <li><strong>Google Fonts.</strong> Page typefaces load from Google Fonts, which receives your IP address and browser details.</li>
+    <li><strong>Hosting and server logs.</strong> The site is hosted on a DigitalOcean server. Like any web server it logs your IP address, the page requested, the time and your browser type; these logs are used only for security and troubleshooting and are rotated out after a short period.</li>
+    <li><strong>Links out.</strong> <em>Order Online</em> goes to Pinz Grill's ChowNow ordering page (see above), and the Facebook, TikTok and Instagram links go to those services. Each has its own privacy policy.</li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <p>Neither the app nor the website sells or shares personal information or uses it for advertising. You can ask what information we hold about you, and ask for it to be corrected or deleted, by emailing the contacts below; we answer within 30 days (45 days where California law allows). <strong>California residents (CCPA/CPRA)</strong> have the right to know, delete, correct and opt out of the sale or sharing of personal information, and will not be treated differently for using these rights. <strong>EEA and UK residents (GDPR / UK GDPR)</strong> may access, correct, erase, restrict or object to the use of their data, receive a portable copy, and complain to their data protection authority (in the UK, the ICO). A catering request emailed to the restaurant is handled on the basis of taking the steps you asked for before an order; deletion requests for it go to <a href="mailto:info@pinzgrill.com">info@pinzgrill.com</a>. Orders placed through ChowNow are governed by ChowNow's policy.</p>
+
   <h2>Children</h2>
-  <p>The app is not directed at children under 13 and collects no information from anyone.</p>
+  <p>The app and website are not directed at children under 13 (under 16 in the EEA/UK). The app collects no information from anyone; if a child has sent a catering request by email, the restaurant will delete it on request.</p>
 
   <h2>Changes</h2>
-  <p>If a future version of the app starts collecting any data, this page and the App Store privacy label will be updated before that version ships.</p>
+  <p>If a future version of the app or website starts collecting any data, this page (and, for the app, the App Store privacy label) will be updated before that version ships.</p>
 
   <h2>Contact</h2>
-  <p>Questions about this policy or the app: <a href="mailto:divinejdavis@gmail.com">divinejdavis@gmail.com</a> (app developer). Questions about an order or about the restaurant: <a href="mailto:info@pinzgrill.com">info@pinzgrill.com</a> or <a href="tel:+18393299352">(839) 329-9352</a>.</p>
+  <p>Questions about this policy, the app or the website: <a href="mailto:divinejdavis@gmail.com">divinejdavis@gmail.com</a> (developer). Questions about an order or about the restaurant: <a href="mailto:info@pinzgrill.com">info@pinzgrill.com</a> or <a href="tel:+18393299352">(839) 329-9352</a>.</p>
   <p><a href="support.html">App support</a></p>
 </section>
 </main>
