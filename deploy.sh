@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Build and publish the concept to https://divinedavis.com/pinz-grill/
-# (portfolio host 159.203.110.79, docroot /var/www/divinedavis — plain dir, not a checkout).
+# (portfolio host 104.236.120.144, docroot /var/www/divinedavis — plain dir, not a checkout).
 set -euo pipefail
 cd "$(dirname "$0")"
 python3 build.py
-HOST=${HOST:-root@159.203.110.79}
+HOST=${HOST:-root@104.236.120.144}
 # Direct SSH from home sometimes stalls; set JUMP=root@104.236.120.144 to relay.
 SSH="ssh -o ConnectTimeout=20${JUMP:+ -J $JUMP}"
 DEST=/var/www/divinedavis/pinz-grill
