@@ -34,7 +34,10 @@ xcodebuild -project "$PROJECT" -scheme "$SCHEME" -configuration Release -destina
   -archivePath "$ARCHIVE" -allowProvisioningUpdates "${AUTH[@]}" DEVELOPMENT_TEAM="$ASC_TEAM_ID" archive > build.nosync/archive.log 2>&1 \
   || { echo "error: archive failed" >&2; grep -E "error" build.nosync/archive.log | tail -20 >&2; exit 1; }
 echo "==> exporting"
-xcodebuild -exportArchive -archivePath "$ARCHIVE" -exportPath "$EXPORT_DIR" -exportOptionsPlist ExportOptions.plist \
+# Apple's tools first (2026-10-12): Xcode's IPA step runs /usr/bin/rsync, which
+# starts the rsync on PATH as its receiving side. A Homebrew rsync 3.x there
+# rejects --extended-attributes and the export dies with just "Copy failed".
+PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH" xcodebuild -exportArchive -archivePath "$ARCHIVE" -exportPath "$EXPORT_DIR" -exportOptionsPlist ExportOptions.plist \
   -allowProvisioningUpdates "${AUTH[@]}" > build.nosync/export.log 2>&1 \
   || { echo "error: export failed" >&2; grep -iE "error" build.nosync/export.log | tail -20 >&2; exit 1; }
 IPA=$(find "$EXPORT_DIR" -maxdepth 1 -name '*.ipa' | head -1)   # named after CFBundleName: "Pinz Grill.ipa"
